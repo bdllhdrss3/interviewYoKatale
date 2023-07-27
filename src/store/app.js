@@ -31,6 +31,10 @@ export const useAuth = defineStore("auth", {
       try {
         const auth = getAuth();
         await signOut(auth);
+        this.email = "";
+        this.displayName = "";
+        this.uid = "";
+        this.accessToken = "";
         this.loggedIn = false;
       } catch (e) {
         throw new Error(e.message);
