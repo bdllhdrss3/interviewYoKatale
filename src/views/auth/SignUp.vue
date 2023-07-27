@@ -175,7 +175,14 @@ export default {
       }
       try {
         this.loading = true;
-        await auth.signup(this.email, this.password, this.address, this.phone, this.name);
+        await auth.$reset();
+        await auth.signup(
+          this.email,
+          this.password,
+          this.address,
+          this.phone,
+          this.name
+        );
         this.$router.push({ name: "Home" });
       } catch (e) {
         this.snackbar = true;

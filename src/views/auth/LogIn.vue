@@ -106,6 +106,7 @@ export default {
       }
       try {
         this.loading = true;
+        await auth.$reset();
         await auth.login(this.email, this.password);
 
         this.$router.push({ name: "Home" });

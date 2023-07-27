@@ -29,8 +29,8 @@ export default {
       try {
         this.loading = true;
         await auth.logout();
-        console.log("Aa");
         this.$router.push({ name: "LogIn" });
+        await auth.$reset();
       } catch (e) {
         console.log(e);
       } finally {
