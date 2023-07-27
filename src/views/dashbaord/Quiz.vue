@@ -1,5 +1,12 @@
 <template>
   <v-container>
+    <v-btn
+      to="/"
+      icon="mdi-home"
+      color="primary"
+      variant="tonal"
+      @click="back"
+    ></v-btn>
     <h1 v-if="active" class="text-center text-h4 mt-3">
       Prove you're a true foodie genius 🍔
     </h1>
@@ -154,6 +161,9 @@ export default {
   methods: {
     retry() {
       location.reload();
+    },
+    back() {
+      this.$router.push("/");
     },
     async toDashbaord() {
       this.finalloader = true;
